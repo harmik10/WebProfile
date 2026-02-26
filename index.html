@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Harmik Sarvaliya — Software Developer & AI Engineer. Explore my projects, skills, and experience." />
+  <meta property="og:title" content="Harmik Sarvaliya | Developer Portfolio" />
+  <meta property="og:description"
+    content="Software Developer & AI Engineer — building intelligent, impactful software." />
+  <meta property="og:image" content="assets/images/profile.png" />
+  <title>Harmik Sarvaliya | Developer Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Share+Tech+Mono&display=swap"
+    rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+
+  <!-- ═══ HACKER MODE OVERLAYS (hidden by default) ═══ -->
+  <div id="hk-scanlines"></div>
+  <canvas id="hk-matrix"></canvas>
+  <div id="hk-overlay">
+    <canvas id="hk-ov-canvas"></canvas>
+    <div id="hk-ov-text">
+      <div class="hk-line" id="hk-line-1"></div>
+      <div class="hk-line" id="hk-line-2"></div>
+      <div class="hk-line" id="hk-line-3"></div>
+      <div id="hk-status"></div>
+    </div>
+  </div>
+
+  <!-- ========== CURSOR ========== -->
+  <div id="cursor"></div>
+  <div id="cursor-follower"></div>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">HP<span class="dot">.</span></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#blog">Blog &amp; Research</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="theme-toggle" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+        <button id="hacker-toggle" class="btn-hacker-mode" aria-label="Toggle hacker mode"
+          title="Transform to Hacker Theme">
+          <span class="hm-skull">☠</span>
+          <span id="hacker-btn-label">HACKER MODE</span>
+        </button>
+        <a href="#contact" class="btn-hire">Hire Me</a>
+        <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section id="hero">
+    <canvas id="particle-canvas"></canvas>
+    <div class="hero-content reveal">
+      <p class="hero-greeting">👋 Hello, I'm</p>
+      <h1 class="hero-name">Harmik<br /><span class="gradient-text">Sarvaliya</span></h1>
+      <div class="typed-wrapper">
+        <span class="typed-prefix">I build&nbsp;</span>
+        <span id="typed-text"></span><span class="typed-cursor">|</span>
+      </div>
+      <p class="hero-tagline">
+        Software Developer &amp; AI Engineer passionate about crafting<br class="hide-sm" />
+        intelligent, impactful digital experiences.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary"><i class="fa-solid fa-rocket"></i> View My Work</a>
+        <a href="#contact" class="btn-secondary"><i class="fa-solid fa-paper-plane"></i> Get In Touch</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num" data-target="10">0</span><span class="stat-plus">+</span>
+          <p>Projects</p>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num" data-target="3">0</span><span class="stat-plus">+</span>
+          <p>Years Coding</p>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num" data-target="5">0</span><span class="stat-plus">+</span>
+          <p>Technologies</p>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image reveal">
+      <div class="hero-img-ring">
+        <img src="assets/images/profile.png" alt="Harmik Sarvaliya" id="hero-profile-img" />
+      </div>
+      <div class="floating-badge badge-1"><i class="fa-brands fa-python"></i> Python</div>
+      <div class="floating-badge badge-2"><i class="fa-solid fa-brain"></i> AI/ML</div>
+      <div class="floating-badge badge-3"><i class="fa-solid fa-code"></i> Dev</div>
+    </div>
+    <a href="#about" class="scroll-indicator" aria-label="Scroll down">
+      <div class="scroll-mouse">
+        <div class="scroll-dot"></div>
+      </div>
+    </a>
+  </section>
+
+  <!-- ========== ABOUT SECTION ========== -->
+  <section id="about">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-tag">Get to know me</span>
+        <h2>About <span class="gradient-text">Me</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>Hi! I'm <strong>Harmik Sarvaliya</strong>, a passionate Software Developer and AI Engineer based in India.
+            I
+            love turning complex problems into elegant, user-friendly solutions using code.</p>
+          <p>I work across the full stack — from crafting pixel-perfect frontends to building robust backends and
+            integrating AI-powered features. I'm especially passionate about automation, intelligent bots, and building
+            tools that make people's lives easier.</p>
+          <p>When I'm not coding, you'll find me exploring new technologies, contributing to open-source, or leveling up
+            my problem-solving skills.</p>
+          <div class="about-info-grid">
+            <div class="info-item"><span class="info-label"><i class="fa-solid fa-location-dot"></i>
+                Location</span><span>India 🇮🇳</span></div>
+            <div class="info-item"><span class="info-label"><i class="fa-solid fa-briefcase"></i>
+                Availability</span><span class="badge-open">Open to Work</span></div>
+            <div class="info-item"><span class="info-label"><i class="fa-solid fa-graduation-cap"></i>
+                Focus</span><span>AI & Full-Stack Dev</span></div>
+            <div class="info-item"><span class="info-label"><i class="fa-solid fa-heart"></i>
+                Passion</span><span>Building Cool Stuff</span></div>
+          </div>
+          <a href="#" class="btn-primary" id="resume-btn"><i class="fa-solid fa-download"></i> Download Resume</a>
+        </div>
+        <div class="about-cards reveal">
+          <div class="card-feature glass">
+            <i class="fa-solid fa-wand-magic-sparkles feature-icon"></i>
+            <h3>AI & Automation</h3>
+            <p>Building intelligent bots, automation scripts, and AI-powered pipelines that work while you sleep.</p>
+          </div>
+          <div class="card-feature glass">
+            <i class="fa-solid fa-layer-group feature-icon"></i>
+            <h3>Full-Stack Dev</h3>
+            <p>End-to-end web development from sleek frontends to powerful, scalable backend services.</p>
+          </div>
+          <div class="card-feature glass">
+            <i class="fa-solid fa-gear feature-icon"></i>
+            <h3>Problem Solving</h3>
+            <p>I love dissecting complex challenges and engineering clean, efficient, and maintainable solutions.</p>
+          </div>
+          <div class="card-feature glass">
+            <i class="fa-solid fa-bolt feature-icon"></i>
+            <h3>Fast Learner</h3>
+            <p>Constantly exploring new tools and tech — from Telegram bots to browser automation and beyond.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS SECTION ========== -->
+  <section id="skills">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-tag">What I work with</span>
+        <h2>Skills &amp; <span class="gradient-text">Tech Stack</span></h2>
+      </div>
+      <div class="skills-categories reveal">
+
+        <div class="skill-category glass">
+          <h3><i class="fa-solid fa-code"></i> Languages</h3>
+          <div class="skill-pills">
+            <span class="skill-pill"><i class="fa-brands fa-python"></i> Python</span>
+            <span class="skill-pill"><i class="fa-brands fa-js"></i> JavaScript</span>
+            <span class="skill-pill">TypeScript</span>
+            <span class="skill-pill">HTML5</span>
+            <span class="skill-pill">CSS3</span>
+            <span class="skill-pill">SQL</span>
+          </div>
+        </div>
+
+        <div class="skill-category glass">
+          <h3><i class="fa-solid fa-layer-group"></i> Frameworks &amp; Libraries</h3>
+          <div class="skill-pills">
+            <span class="skill-pill"><i class="fa-brands fa-react"></i> React</span>
+            <span class="skill-pill">Node.js</span>
+            <span class="skill-pill">FastAPI</span>
+            <span class="skill-pill">Flask</span>
+            <span class="skill-pill">Selenium</span>
+            <span class="skill-pill">Pandas</span>
+          </div>
+        </div>
+
+        <div class="skill-category glass">
+          <h3><i class="fa-solid fa-brain"></i> AI &amp; Tools</h3>
+          <div class="skill-pills">
+            <span class="skill-pill">OpenAI API</span>
+            <span class="skill-pill">LangChain</span>
+            <span class="skill-pill">Telegram Bot API</span>
+            <span class="skill-pill">Browser Automation</span>
+            <span class="skill-pill">REST APIs</span>
+          </div>
+        </div>
+
+        <div class="skill-category glass">
+          <h3><i class="fa-solid fa-server"></i> Dev &amp; Infrastructure</h3>
+          <div class="skill-pills">
+            <span class="skill-pill"><i class="fa-brands fa-git-alt"></i> Git</span>
+            <span class="skill-pill"><i class="fa-brands fa-github"></i> GitHub</span>
+            <span class="skill-pill">VS Code</span>
+            <span class="skill-pill">GitHub Pages</span>
+            <span class="skill-pill">PostgreSQL</span>
+            <span class="skill-pill">MongoDB</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Proficiency Bars -->
+      <div class="proficiency-bars reveal">
+        <h3 class="proficiency-title">Core Proficiency</h3>
+        <div class="bar-item">
+          <div class="bar-label"><span>Python</span><span>92%</span></div>
+          <div class="bar-track">
+            <div class="bar-fill" data-width="92"></div>
+          </div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label"><span>JavaScript</span><span>80%</span></div>
+          <div class="bar-track">
+            <div class="bar-fill" data-width="80"></div>
+          </div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label"><span>AI / Automation</span><span>85%</span></div>
+          <div class="bar-track">
+            <div class="bar-fill" data-width="85"></div>
+          </div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label"><span>Full-Stack Web</span><span>78%</span></div>
+          <div class="bar-track">
+            <div class="bar-fill" data-width="78"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS SECTION ========== -->
+  <section id="projects">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-tag">What I've built</span>
+        <h2>My <span class="gradient-text">Projects</span></h2>
+      </div>
+      <div class="projects-grid">
+
+        <article class="project-card glass reveal" id="project-card-1">
+          <div class="project-img-wrap">
+            <img src="assets/images/project1.png" alt="Analytics Dashboard" loading="lazy" />
+            <div class="project-overlay">
+              <a href="#" class="btn-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="#" class="btn-icon" aria-label="Live Demo"><i
+                  class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">React</span>
+            </div>
+            <h3>Analytics Dashboard</h3>
+            <p>A full-stack real-time analytics platform with interactive charts, dark UI, REST API backend, and live
+              data updates.</p>
+            <a href="#" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="project-card glass reveal" id="project-card-2">
+          <div class="project-img-wrap">
+            <img src="assets/images/project2.png" alt="AI Telegram Bot" loading="lazy" />
+            <div class="project-overlay">
+              <a href="#" class="btn-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="#" class="btn-icon" aria-label="Live Demo"><i
+                  class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="tag">Python</span><span class="tag">Telegram API</span><span class="tag">AI</span>
+            </div>
+            <h3>AI Telegram Bot</h3>
+            <p>An intelligent Telegram nanobot that handles product searches, commands, and smart responses with AI
+              integration.</p>
+            <a href="#" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="project-card glass reveal" id="project-card-3">
+          <div class="project-img-wrap">
+            <img src="assets/images/project3.png" alt="Browser Automation Tool" loading="lazy" />
+            <div class="project-overlay">
+              <a href="#" class="btn-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="#" class="btn-icon" aria-label="Live Demo"><i
+                  class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="tag">Python</span><span class="tag">Selenium</span><span class="tag">Automation</span>
+            </div>
+            <h3>Browser Automation Tool</h3>
+            <p>A powerful Selenium-based browser automation engine for scraping, testing, and workflow automation tasks.
+            </p>
+            <a href="#" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+      </div>
+      <div class="projects-more reveal">
+        <a href="https://github.com/" target="_blank" rel="noopener" class="btn-secondary"><i
+            class="fa-brands fa-github"></i> See All on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BLOG & RESEARCH SECTION ========== -->
+  <section id="blog">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-tag">Thoughts &amp; Discoveries</span>
+        <h2>Blog &amp; <span class="gradient-text">Research</span></h2>
+        <p class="section-sub">Ideas I'm exploring, things I'm learning, and articles worth reading.</p>
+      </div>
+
+      <!-- Tab Toggle -->
+      <div class="blog-tabs reveal" id="blog-tabs">
+        <button class="blog-tab active" data-tab="posts" id="tab-posts">✍️ Blog Posts</button>
+        <button class="blog-tab" data-tab="research" id="tab-research">🔬 Research &amp; Reading</button>
+      </div>
+
+      <!-- Blog Posts -->
+      <div class="blog-grid" id="tab-content-posts">
+
+        <article class="blog-card glass reveal" id="blog-card-1">
+          <div class="blog-card-top">
+            <span class="blog-tag">AI &amp; Automation</span>
+            <span class="blog-read"><i class="fa-regular fa-clock"></i> 5 min read</span>
+          </div>
+          <h3>Building Your First Telegram Bot with Python</h3>
+          <p>A step-by-step guide to creating an intelligent Telegram bot using Python and the python-telegram-bot
+            library, with AI command handling.</p>
+          <div class="blog-footer">
+            <span class="blog-date"><i class="fa-regular fa-calendar"></i> Feb 2026</span>
+            <a href="#" class="blog-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="blog-card glass reveal" id="blog-card-2">
+          <div class="blog-card-top">
+            <span class="blog-tag">Web Dev</span>
+            <span class="blog-read"><i class="fa-regular fa-clock"></i> 7 min read</span>
+          </div>
+          <h3>How I Built &amp; Deployed My Portfolio on GitHub Pages</h3>
+          <p>Everything I learned building this portfolio — from design decisions and CSS tricks to deploying for free
+            on GitHub Pages.</p>
+          <div class="blog-footer">
+            <span class="blog-date"><i class="fa-regular fa-calendar"></i> Feb 2026</span>
+            <a href="#" class="blog-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="blog-card glass reveal" id="blog-card-3">
+          <div class="blog-card-top">
+            <span class="blog-tag">Python</span>
+            <span class="blog-read"><i class="fa-regular fa-clock"></i> 4 min read</span>
+          </div>
+          <h3>Browser Automation with Selenium: A Practical Guide</h3>
+          <p>Real-world patterns for writing robust Selenium scripts — handling dynamic pages, waits, and building
+            reusable automation workflows.</p>
+          <div class="blog-footer">
+            <span class="blog-date"><i class="fa-regular fa-calendar"></i> Jan 2026</span>
+            <a href="#" class="blog-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Research & Reading -->
+      <div class="blog-grid hidden" id="tab-content-research">
+
+        <article class="blog-card glass reveal research-card" id="research-card-1">
+          <div class="blog-card-top">
+            <span class="blog-tag tag-research">Paper</span>
+            <span class="blog-read"><i class="fa-solid fa-star"></i> Must Read</span>
+          </div>
+          <h3>Attention Is All You Need — Vaswani et al.</h3>
+          <p>The foundational Transformer paper that reshaped NLP and became the backbone of GPT, BERT, and every modern
+            LLM. Essential reading for any AI practitioner.</p>
+          <div class="blog-footer">
+            <span class="blog-date"><i class="fa-solid fa-tag"></i> NLP · Transformers</span>
+            <a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener" class="blog-link">Read Paper <i
+                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </article>
+
+        <article class="blog-card glass reveal research-card" id="research-card-2">
+          <div class="blog-card-top">
+            <span class="blog-tag tag-research">Article</span>
+            <span class="blog-read"><i class="fa-solid fa-star"></i> Interesting</span>
+          </div>
+          <h3>LangChain: Building LLM-Powered Applications</h3>
+          <p>How to chain language model calls with tools, memory, and agents to build complex AI applications — with
+            practical Python examples.</p>
+          <div class="blog-footer">
+            <span class="blog-date"><i class="fa-solid fa-tag"></i> LLMs · Python</span>
+            <a href="https://python.langchain.com/" target="_blank" rel="noopener" class="blog-link">Read More <i
+                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </article>
+
+        <article class="blog-card glass reveal research-card" id="research-card-3">
+          <div class="blog-card-top">
+            <span class="blog-tag tag-research">Book</span>
+            <span class="blog-read"><i class="fa-solid fa-star"></i> Currently Reading</span>
+          </div>
+          <h3>Clean Code — Robert C. Martin</h3>
+          <p>Timeless principles for writing readable, maintainable, and professional code. A must-have for every
+            developer who cares about their craft.</p>
+          <div class="blog-footer">
+            <span class="blog-date"><i class="fa-solid fa-tag"></i> Software Engineering</span>
+            <a href="#" class="blog-link">View Notes <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="projects-more reveal">
+        <a href="#" class="btn-secondary"><i class="fa-solid fa-pen-nib"></i> View All Posts</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EXPERIENCE SECTION ========== -->
+  <section id="experience">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-tag">My journey</span>
+        <h2>Experience &amp; <span class="gradient-text">Education</span></h2>
+      </div>
+      <div class="timeline">
+
+        <div class="timeline-item reveal" id="tl-1">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass">
+            <div class="tl-header">
+              <span class="tl-date"><i class="fa-regular fa-calendar"></i> 2024 – Present</span>
+              <span class="tl-badge">Current</span>
+            </div>
+            <h3>Software Developer &amp; AI Engineer</h3>
+            <p class="tl-org"><i class="fa-solid fa-building"></i> Freelance / Independent Projects</p>
+            <p>Building AI-powered automation tools, Telegram bots, and full-stack web applications. Working with
+              Python, REST APIs, and AI/LLM integrations.</p>
+            <div class="tl-skills"><span>Python</span><span>AI APIs</span><span>FastAPI</span><span>Telegram Bot</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" id="tl-2">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass">
+            <div class="tl-header">
+              <span class="tl-date"><i class="fa-regular fa-calendar"></i> 2022 – 2024</span>
+            </div>
+            <h3>Full-Stack Web Developer</h3>
+            <p class="tl-org"><i class="fa-solid fa-building"></i> Personal &amp; Client Projects</p>
+            <p>Developed end-to-end web applications with Python backends and modern JS frontends. Built REST APIs,
+              dashboards, and data-processing pipelines.</p>
+            <div class="tl-skills"><span>JavaScript</span><span>Flask</span><span>React</span><span>PostgreSQL</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" id="tl-3">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass">
+            <div class="tl-header">
+              <span class="tl-date"><i class="fa-regular fa-calendar"></i> 2020 – 2022</span>
+            </div>
+            <h3>Computer Science Studies</h3>
+            <p class="tl-org"><i class="fa-solid fa-graduation-cap"></i> Academic Background</p>
+            <p>Foundations in programming, data structures, algorithms, and software engineering. Started building
+              personal projects and exploring AI/ML.</p>
+            <div class="tl-skills"><span>C/C++</span><span>Data Structures</span><span>Algorithms</span><span>OOP</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <section id="contact">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-tag">Let's connect</span>
+        <h2>Get In <span class="gradient-text">Touch</span></h2>
+        <p class="section-sub">I'm always open to new opportunities, collaborations, or just a friendly chat!</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="contact-card glass">
+            <i class="fa-solid fa-envelope"></i>
+            <h4>Email</h4>
+            <a href="mailto:harmik@example.com">harmik@example.com</a>
+          </div>
+          <div class="contact-card glass">
+            <i class="fa-brands fa-github"></i>
+            <h4>GitHub</h4>
+            <a href="https://github.com/" target="_blank" rel="noopener">github.com/harmik</a>
+          </div>
+          <div class="contact-card glass">
+            <i class="fa-brands fa-linkedin"></i>
+            <h4>LinkedIn</h4>
+            <a href="https://linkedin.com/" target="_blank" rel="noopener">linkedin.com/in/harmik</a>
+          </div>
+        </div>
+        <form class="contact-form glass reveal" id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID"
+          method="POST">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="John Doe" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="john@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Hey Harmik, I'd love to work with you on..."
+              required></textarea>
+          </div>
+          <button type="submit" class="btn-primary btn-full" id="submit-btn">
+            <i class="fa-solid fa-paper-plane"></i> Send Message
+          </button>
+          <p class="form-note" id="form-note"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer id="footer">
+    <div class="footer-container">
+      <div class="footer-logo">HP<span class="dot">.</span></div>
+      <p class="footer-tagline">Designed &amp; built with ❤️ by Harmik Sarvaliya</p>
+      <div class="footer-socials">
+        <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub"><i
+            class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><i
+            class="fa-brands fa-linkedin"></i></a>
+        <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter"><i
+            class="fa-brands fa-x-twitter"></i></a>
+      </div>
+      <p class="footer-copy">&copy; 2026 Harmik Sarvaliya. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button id="back-to-top" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
