@@ -100,11 +100,14 @@ revealEls.forEach((el) => revealObserver.observe(el));
 
 // ─── Typed Text Effect ───────────────────────────────────────
 const phrases = [
-  'AI-Powered Apps.',
-  'Automation Bots.',
-  'Full-Stack Web Apps.',
-  'Smart Solutions.',
-  'Cool Stuff. 🚀',
+  "walls not to keep the world out, but to understand who truly tries to enter.",
+  "my mind like a network, knowing every open port is both an opportunity and a risk.",
+  "defenses before victories, because survival is the first form of triumph.",
+  "silence between signals, so I could hear the intentions hidden in noise.",
+  "trust slowly, the same way I test systems, assuming nothing until proven secure.",
+  "myself like an encrypted archive, unreadable to those without patience.",
+  "resilience from every breach, because exposure teaches what comfort never could.",
+  "my path in shadows, not to hide, but to see what others overlook.",
 ];
 let phraseIndex = 0, charIndex = 0, isDeleting = false;
 const typedEl = document.getElementById('typed-text');
